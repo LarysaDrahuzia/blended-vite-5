@@ -1,6 +1,7 @@
+import ForbesListItem from '../ForbesListItem/ForbesListItem';
 import style from './ForbesList.module.css';
 
-const ForbesList = list => {
+const ForbesList = ({ list }) => {
   return (
     <div className={style.board}>
       <div className={style.header}>
@@ -11,11 +12,11 @@ const ForbesList = list => {
       </div>
 
       <ul className={style.list}>
-        {/* Довільна кіл-сть
-        <li className={style.item}>
-           <ForbesListItem/>
-        </li>
-     */}
+        {list.map(({ avatar, name, capital, id }) => (
+          <li key={id} className={style.item}>
+            <ForbesListItem avatar={avatar} name={name} capital={capital} />
+          </li>
+        ))}
       </ul>
     </div>
   );
