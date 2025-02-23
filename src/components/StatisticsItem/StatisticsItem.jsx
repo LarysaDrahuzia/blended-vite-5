@@ -1,11 +1,14 @@
+import { IconContext } from 'react-icons';
 import style from './StatisticsItem.module.css';
 
-const StatisticsItem = () => {
+const StatisticsItem = ({ title, total, icon }) => {
   return (
     <>
-      {/* Тут повинна бути іконка */}
-      <span className={style.counter}>2147</span>
-      <p className={style.text}>Happy Customers</p>
+      <IconContext.Provider value={{ color: '#29a14f', size: 30 }}>
+        {icon}
+      </IconContext.Provider>
+      <span className={style.counter}>{total}</span>
+      <p className={style.text}>{title}</p>
     </>
   );
 };

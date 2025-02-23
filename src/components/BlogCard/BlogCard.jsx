@@ -1,4 +1,5 @@
 import styles from './BlogCard.module.css';
+import { formatDateToNow } from '../../helpers/formatDateToNow';
 
 const BlogCard = ({
   poster,
@@ -24,7 +25,7 @@ const BlogCard = ({
           <img className={styles.avatar} src={avatar} alt={name} />
           <div>
             <h3 className={styles.userName}>{name}</h3>
-            <small className={styles.date}>{postedAt}</small>
+            <small className={styles.date}>{formatDateToNow(postedAt)}</small>
           </div>
         </div>
       </div>
